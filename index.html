@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔮 Магический Шар Предсказаний</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1a2e; /* Темный фон */
+            color: #fff;
+            text-align: center;
+        }
+        h1 {
+            color: #ffcc00; /* Золотой цвет */
+        }
+        #magicButton {
+            background-color: #6a0572; /* Фиолетовый */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+            box-shadow: 0 4px #4a0350;
+            transition: transform 0.1s;
+        }
+        #magicButton:active {
+            box-shadow: 0 2px #4a0350;
+            transform: translateY(2px);
+        }
+        #prediction {
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #00ff99; /* Яркий цвет для предсказания */
+            min-height: 50px; /* Чтобы текст не "прыгал" */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Спроси Магический Шар</h1>
+    <p>Нажми на шар, чтобы узнать свою судьбу на сегодня!</p>
+
+    <button id="magicButton">🔮 Спросить!</button>
+
+    <div id="prediction">Нажми выше!</div>
+
+    <script>
+        const predictions = [
+            "Сегодня будет отличный день! Правда, не для всех...",
+            "Да, но только если ты съешь печеньку до полудня.",
+            "Шансы крайне малы. Лучше проверь свои файлы на наличие Ошибки 345.",
+            "Не спрашивай об этом. Просто иди спать.",
+            "Звезды говорят 'Нет'. Попробуй спросить кота.",
+            "Абсолютно точно! Тебя ждёт приятный сюрприз.",
+            "Скоро ты узнаешь что-то очень важное. Может быть.",
+            "Перезагрузи свою жизнь, и ответ придёт.",
+            "Ответ 'Да' содержится в твоей любимой песне.",
+            "Весь мир против тебя, но ты победишь."
+        ];
+
+        document.getElementById('magicButton').onclick = function() {
+            // Выбираем случайное предсказание
+            const randomIndex = Math.floor(Math.random() * predictions.length);
+            const randomPrediction = predictions[randomIndex];
+
+            // Отображаем его
+            document.getElementById('prediction').textContent = randomPrediction;
+        };
+    </script>
+
+</body>
+</html>
